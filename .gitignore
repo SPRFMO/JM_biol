@@ -1,0 +1,11 @@
+/.quarto/
+/_freeze/
+/JM_biol_files/
+/*.html
+/*.pdf
+/*.docx
+/.Rproj.user/
+.DS_Store
+
+
+**/*.quarto_ipynb

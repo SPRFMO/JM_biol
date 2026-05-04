@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jack Mackerel Working Group">
+<meta name="dcterms.date" content="2026-05-04">
+
+<title>Biological data used in the joint jack mackerel assessment</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="JM_biol_files/libs/clipboard/clipboard.min.js"></script>
+<script src="JM_biol_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="JM_biol_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="JM_biol_files/libs/quarto-html/popper.min.js"></script>
+<script src="JM_biol_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="JM_biol_files/libs/quarto-html/anchor.min.js"></script>
+<link href="JM_biol_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="JM_biol_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="JM_biol_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="JM_biol_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="JM_biol_files/libs/bootstrap/bootstrap-8ffd5f67044e5306d9846f29df41dda5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="JM_biol_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="JM_biol_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="JM_biol_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro"><span class="header-section-number">1</span> Intro</a></li>
+  <li><a href="#model-data" id="toc-model-data" class="nav-link" data-scroll-target="#model-data"><span class="header-section-number">2</span> Model data</a></li>
+  <li><a href="#analyses" id="toc-analyses" class="nav-link" data-scroll-target="#analyses"><span class="header-section-number">3</span> Analyses</a>
+  <ul class="collapse">
+  <li><a href="#natural-mortality" id="toc-natural-mortality" class="nav-link" data-scroll-target="#natural-mortality"><span class="header-section-number">3.1</span> Natural mortality</a></li>
+  <li><a href="#maturity" id="toc-maturity" class="nav-link" data-scroll-target="#maturity"><span class="header-section-number">3.2</span> Maturity</a></li>
+  <li><a href="#weight-at-age" id="toc-weight-at-age" class="nav-link" data-scroll-target="#weight-at-age"><span class="header-section-number">3.3</span> Weight-at-age</a></li>
+  </ul></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion"><span class="header-section-number">4</span> Results and discussion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="JM_biol.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Biological data used in the joint jack mackerel assessment</h1>
+<p class="subtitle lead">Working paper for JM_SCW_prep</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jack Mackerel Working Group </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 4, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="intro" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Intro</h1>
+<p>This working paper evaluates the biological inputs used in the joint jack mackerel assessment data and control files for model <code>1.14</code>. The immediate purpose is to provide a focused biological-data review for <code>JM_SCW_prep</code>, while keeping the assessment inputs and configuration files traceable to the neighboring <code>jjm</code> repository.</p>
+<p>Model <code>1.14</code> is the SC13 model update described in <code>jjm/assessment/README.md</code> as model <code>1.13</code> with updates to historical weight-at-age for the Far North fleet. The SC13 final report and Jack Mackerel Technical Annex provide the formal assessment context for this model series <span class="citation" data-cites="sprfmo2025sc13report sprfmo2025annex11">(<a href="#ref-sprfmo2025sc13report" role="doc-biblioref">SPRFMO Scientific Committee 2025a</a>, <a href="#ref-sprfmo2025annex11" role="doc-biblioref">2025b</a>)</span>. The same data file is used with both assessment hypotheses: <code>h1_1.14</code> for the single-stock model and <code>h2_1.14</code> for the two-stock model.</p>
+</section>
+<section id="model-data" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Model data</h1>
+<p>The source files used by this report are listed in <a href="#tbl-source-files" class="quarto-xref">Table&nbsp;1</a>.</p>
+<div class="cell">
+<div id="tbl-source-files" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-source-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Source files used by this biological-data working paper.
+</figcaption>
+<div aria-describedby="tbl-source-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Role</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Common data file</td>
+<td style="text-align: left;">../jjm/assessment/input/1.14.dat</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Single-stock control file</td>
+<td style="text-align: left;">../jjm/assessment/config/h1_1.14.ctl</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Two-stock control file</td>
+<td style="text-align: left;">../jjm/assessment/config/h2_1.14.ctl</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The common data file defines the temporal, age, fleet, composition, index, and weight-at-age information used by the model. The control files define how those data are mapped to stock hypotheses, including natural mortality, maturity, growth, population weight-at-age, catchability, and selectivity assumptions.</p>
+<div class="cell">
+<div id="tbl-model-data" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-model-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: High-level contents of the model 1.14 data file.
+</figcaption>
+<div aria-describedby="tbl-model-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 87%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">item</th>
+<th style="text-align: left;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Model years</td>
+<td style="text-align: left;">1970-2025</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ages</td>
+<td style="text-align: left;">1-12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fleets</td>
+<td style="text-align: left;">N_Chile, SC_Chile_PS, FarNorth, Offshore_Trawl</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Indices</td>
+<td style="text-align: left;">Chile_AcousCS, Chile_AcousN, Chile_CPUE, DEPM, Peru_Acoustic, Peru_CPUE, Offshore_CPUE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The biological review should distinguish between information contained directly in <code>1.14.dat</code> and assumptions introduced through the <code>h1_1.14.ctl</code> and <code>h2_1.14.ctl</code> control files. This distinction matters because some biological quantities are common to both stock hypotheses, while others differ by stock hypothesis. <a href="#tbl-model-data" class="quarto-xref">Table&nbsp;2</a> summarizes the principal dimensions and named data components in the common model <code>1.14</code> data file.</p>
+</section>
+<section id="analyses" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Analyses</h1>
+<p>The analyses below are placeholders for reproducible checks against the model <code>1.14</code> files. They are intentionally organized around the three biological data questions requested for this working paper.</p>
+<section id="natural-mortality" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="natural-mortality"><span class="header-section-number">3.1</span> Natural mortality</h2>
+<p>Natural mortality is configured in the control files under <code>#N_Mort</code>. The single-stock model uses one natural mortality value, while the two-stock model may assign stock-specific values. These configured values are shown in <a href="#tbl-natural-mortality" class="quarto-xref">Table&nbsp;3</a>.</p>
+<div class="cell">
+<div id="tbl-natural-mortality" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-natural-mortality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Natural mortality values configured for the model 1.14 stock hypotheses.
+</figcaption>
+<div aria-describedby="tbl-natural-mortality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">model</th>
+<th style="text-align: left;">stock</th>
+<th style="text-align: right;">natural_mortality</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">h1_1.14</td>
+<td style="text-align: left;">Stock</td>
+<td style="text-align: right;">0.28</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">0.28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">0.33</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Items to evaluate:</p>
+<ol type="1">
+<li>Whether the assumed values are consistent with the biological basis used in previous benchmark and annual assessment documents.</li>
+<li>Whether stock-specific assumptions in <code>h2_1.14</code> are supported by distinct biological evidence.</li>
+<li>How sensitive derived spawning biomass and reference points are to plausible alternatives.</li>
+</ol>
+</section>
+<section id="maturity" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="maturity"><span class="header-section-number">3.2</span> Maturity</h2>
+<p>Maturity-at-age is configured in the control files under <code>#Pmatatage</code>. The review should check whether the schedule is common or stock-specific, whether age-1 partial maturity remains defensible, and whether the schedule aligns with the biological source material used by the assessment.</p>
+<p>In the JJM, maturity enters spawning biomass through a maturity-weighted population weight-at-age vector. For stock <span class="math inline">s</span>, year <span class="math inline">y</span>, and age <span class="math inline">a</span>, spawning biomass is computed as</p>
+<p><span class="math display">
+SSB_{s,y} =
+\sum_a
+N_{s,y,a}
+S_{s,y,a}^{(m_{\mathrm{spawn}} - 1) / 12}
+w^{\mathrm{pop}}_{s,a}
+p^{\mathrm{mat}}_{s,a},
+</span></p>
+<p>where <span class="math inline">N_{s,y,a}</span> is numbers-at-age at the start of year, <span class="math inline">S_{s,y,a} =
+\exp(-Z_{s,y,a})</span> is annual survival, <span class="math inline">m_{\mathrm{spawn}}</span> is the spawning month from <code>#Pspwn</code> in the data file, <span class="math inline">w^{\mathrm{pop}}_{s,a}</span> is the population weight-at-age from <code>#Pwtatage</code>, and <span class="math inline">p^{\mathrm{mat}}_{s,a}</span> is maturity-at-age from <code>#Pmatatage</code>. For model <code>1.14</code>, <code>#Pspwn</code> is 10.5, so the spawning calculation occurs after <span class="math inline">(10.5 - 1) / 12 = 0.792</span> of annual mortality has occurred.</p>
+<p>The weight-at-age used in this equation is the stock-specific population weight-at-age in the control file. It is fixed through time within each stock. The time-varying fishery and index weight-at-age arrays in <code>1.14.dat</code> (<code>Fwtatage</code> and <code>Iwtatage</code>) are used for predicted catch and index biomass, not for spawning biomass.</p>
+<p>For the two-stock <code>h2_1.14</code> model, the corresponding unfished spawning biomass per recruit, multiplied by 1000, is 1597.8 for Stock 1 and 1367.3 for Stock 2. These values use the stock-specific natural mortality, maturity-at-age, and population weight-at-age schedules in <code>h2_1.14.ctl</code>, with spawning at month 10.5 and the age-12 plus group. The age-specific contribution to those two values is shown in <a href="#fig-h2-sbpr-at-age" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-h2-sbpr-at-age" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-h2-sbpr-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="JM_biol_files/figure-html/fig-h2-sbpr-at-age-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Age-specific spawning biomass per recruit for the two stocks in h2_1.14, multiplied by 1000."><img src="JM_biol_files/figure-html/fig-h2-sbpr-at-age-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-h2-sbpr-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Age-specific spawning biomass per recruit for the two stocks in h2_1.14, multiplied by 1000.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div id="tbl-maturity-preview" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-maturity-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Maturity-at-age vectors read from the h2_1.14 control file.
+</figcaption>
+<div aria-describedby="tbl-maturity-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">model</th>
+<th style="text-align: left;">stock</th>
+<th style="text-align: right;">age</th>
+<th style="text-align: right;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.52</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.37</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.98</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The maturity-at-age schedules used in the spawning biomass calculation are listed by stock for the two-stock model in <a href="#tbl-maturity-preview" class="quarto-xref">Table&nbsp;4</a>. The single-stock model uses the same maturity schedule as Stock 1 in <code>h2_1.14</code>.</p>
+<div class="cell">
+<div id="tbl-ssb-weight-at-age" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ssb-weight-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Population weight-at-age used with maturity-at-age in the h2_1.14 spawning biomass equation.
+</figcaption>
+<div aria-describedby="tbl-ssb-weight-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">model</th>
+<th style="text-align: left;">stock</th>
+<th style="text-align: right;">age</th>
+<th style="text-align: right;">population_weight_at_age</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.1815</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.2303</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.3025</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.3820</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.5268</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.7345</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.9226</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.1060</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1.3435</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">1.5135</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1.6205</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1.8285</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0380</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1460</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.3240</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.5550</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.8190</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1.1000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1.3840</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.6600</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1.9220</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">2.1650</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2.3870</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2.5880</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The population weight-at-age vectors paired with maturity in the spawning biomass equation are shown for the two-stock model in <a href="#tbl-ssb-weight-at-age" class="quarto-xref">Table&nbsp;5</a>. Again, the single-stock model uses the same vector as Stock 1 in <code>h2_1.14</code>.</p>
+</section>
+<section id="weight-at-age" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="weight-at-age"><span class="header-section-number">3.3</span> Weight-at-age</h2>
+<p>Weight-at-age is the central biological data issue for this working paper because model <code>1.14</code> is specifically identified as updating historical weight-at-age for the Far North fleet. The model includes population weight-at-age in the control files and fishery or survey weight-at-age schedules in the data file. The fixed population weight-at-age vectors used for spawning biomass are repeated for <code>h2_1.14</code> in <a href="#tbl-pop-weight-at-age" class="quarto-xref">Table&nbsp;6</a> to separate them from time-varying fishery and index weights-at-age.</p>
+<div class="cell">
+<div id="tbl-pop-weight-at-age" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-pop-weight-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Population weight-at-age vectors read from the h2_1.14 control file.
+</figcaption>
+<div aria-describedby="tbl-pop-weight-at-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">model</th>
+<th style="text-align: left;">stock</th>
+<th style="text-align: right;">age</th>
+<th style="text-align: right;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.1815</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.2303</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.3025</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.3820</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.5268</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.7345</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.9226</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.1060</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1.3435</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">1.5135</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1.6205</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock1</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1.8285</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0380</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.1460</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.3240</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.5550</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.8190</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1.1000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1.3840</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.6600</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1.9220</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">2.1650</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2.3870</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2_1.14</td>
+<td style="text-align: left;">Stock2</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2.5880</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>For the single-stock model <code>h1_1.14</code>, correlations among fishery and acoustic-survey weight-at-age sources are generally modest across ages (<a href="#tbl-waa-correlation-summary" class="quarto-xref">Table&nbsp;7</a>), with the age pattern shown in <a href="#fig-waa-correlation-by-age" class="quarto-xref">Figure&nbsp;2</a>. CPUE indices and DEPM are excluded because the CPUE weights-at-age duplicate their associated fishery series and DEPM is omitted here to simplify the source comparison. The annual distributions of weight-at-age from this same reduced source set are shown for ages 1-9 in <a href="#fig-waa-boxplot-by-age" class="quarto-xref">Figure&nbsp;3</a>; the plotted points mark the overall mean normalized weight-at-age for each source and age. For age 3, the median cross-source correlation is 0.04, with 8 negative source pairs out of 21 total pairs. The age-3 heatmap in <a href="#fig-age3-waa-correlation" class="quarto-xref">Figure&nbsp;4</a> shows that several high correlations are expected because some data sources share related biological sampling and imputation histories. For age 3, <code>FarNorth</code> remains strongly correlated with <code>Peru_Acoustic</code>. The same age-3 source subset is shown as a pairs plot in <a href="#fig-age3-waa-pairs" class="quarto-xref">Figure&nbsp;5</a>, with pairwise correlations in the upper triangle and smoothed scatterplots in the lower triangle. Age 8 has the highest mean pairwise correlation among the age-specific weight-at-age series in <a href="#tbl-waa-correlation-summary" class="quarto-xref">Table&nbsp;7</a>; the corresponding correlation heatmap for the same reduced source set is shown in <a href="#fig-age8-waa-correlation" class="quarto-xref">Figure&nbsp;6</a>. The same age-8 source subset is also shown as a pairs plot in <a href="#fig-age8-waa-pairs" class="quarto-xref">Figure&nbsp;7</a>, which makes the linearity and outlying years behind the pairwise correlations easier to inspect.</p>
+<div class="cell">
+<div id="tbl-waa-correlation-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-waa-correlation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Pairwise correlations among h1_1.14 fishery and acoustic-survey weight-at-age time series, summarized by age. CPUE indices and DEPM are excluded.
+</figcaption>
+<div aria-describedby="tbl-waa-correlation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="wjtjwzhzxp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wjtjwzhzxp table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wjtjwzhzxp thead, #wjtjwzhzxp tbody, #wjtjwzhzxp tfoot, #wjtjwzhzxp tr, #wjtjwzhzxp td, #wjtjwzhzxp th {
+  border-style: none;
+}
+
+#wjtjwzhzxp p {
+  margin: 0;
+  padding: 0;
+}
+
+#wjtjwzhzxp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wjtjwzhzxp .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#wjtjwzhzxp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wjtjwzhzxp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wjtjwzhzxp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wjtjwzhzxp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wjtjwzhzxp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wjtjwzhzxp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wjtjwzhzxp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wjtjwzhzxp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wjtjwzhzxp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wjtjwzhzxp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wjtjwzhzxp .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#wjtjwzhzxp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#wjtjwzhzxp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wjtjwzhzxp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wjtjwzhzxp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wjtjwzhzxp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wjtjwzhzxp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wjtjwzhzxp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#wjtjwzhzxp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#wjtjwzhzxp .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#wjtjwzhzxp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wjtjwzhzxp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#wjtjwzhzxp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#wjtjwzhzxp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wjtjwzhzxp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wjtjwzhzxp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wjtjwzhzxp .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wjtjwzhzxp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wjtjwzhzxp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wjtjwzhzxp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wjtjwzhzxp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wjtjwzhzxp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wjtjwzhzxp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wjtjwzhzxp .gt_left {
+  text-align: left;
+}
+
+#wjtjwzhzxp .gt_center {
+  text-align: center;
+}
+
+#wjtjwzhzxp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wjtjwzhzxp .gt_font_normal {
+  font-weight: normal;
+}
+
+#wjtjwzhzxp .gt_font_bold {
+  font-weight: bold;
+}
+
+#wjtjwzhzxp .gt_font_italic {
+  font-style: italic;
+}
+
+#wjtjwzhzxp .gt_super {
+  font-size: 65%;
+}
+
+#wjtjwzhzxp .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#wjtjwzhzxp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#wjtjwzhzxp .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#wjtjwzhzxp .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#wjtjwzhzxp .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#wjtjwzhzxp .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#wjtjwzhzxp .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#wjtjwzhzxp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#wjtjwzhzxp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="age" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">age</th>
+<th id="mean_correlation" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">mean_correlation</th>
+<th id="median_correlation" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">median_correlation</th>
+<th id="minimum_correlation" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">minimum_correlation</th>
+<th id="maximum_correlation" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">maximum_correlation</th>
+<th id="negative_pairs" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">negative_pairs</th>
+<th id="pairs_ge_0.7" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pairs_ge_0.7</th>
+<th id="pairs" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pairs</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="age">1</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.19</td>
+<td class="gt_row gt_right" headers="median_correlation">0.16</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.15</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.94</td>
+<td class="gt_row gt_right" headers="negative_pairs">2</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">1</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="age">2</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.07</td>
+<td class="gt_row gt_right" headers="median_correlation">0.02</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.23</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.90</td>
+<td class="gt_row gt_right" headers="negative_pairs">10</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">1</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="age">3</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.08</td>
+<td class="gt_row gt_right" headers="median_correlation">0.04</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.66</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.83</td>
+<td class="gt_row gt_right" headers="negative_pairs">8</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">1</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="age">4</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.09</td>
+<td class="gt_row gt_right" headers="median_correlation">0.12</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.54</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.85</td>
+<td class="gt_row gt_right" headers="negative_pairs">6</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">1</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="age">5</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.10</td>
+<td class="gt_row gt_right" headers="median_correlation">0.10</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.59</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.87</td>
+<td class="gt_row gt_right" headers="negative_pairs">5</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">1</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="age">6</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.11</td>
+<td class="gt_row gt_right" headers="median_correlation">0.06</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.50</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.88</td>
+<td class="gt_row gt_right" headers="negative_pairs">8</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">1</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="age">7</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.10</td>
+<td class="gt_row gt_right" headers="median_correlation">0.10</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.35</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.88</td>
+<td class="gt_row gt_right" headers="negative_pairs">10</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">1</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="age">8</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.12</td>
+<td class="gt_row gt_right" headers="median_correlation">0.05</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.32</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.89</td>
+<td class="gt_row gt_right" headers="negative_pairs">9</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">1</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="age">9</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.10</td>
+<td class="gt_row gt_right" headers="median_correlation">0.06</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.30</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.66</td>
+<td class="gt_row gt_right" headers="negative_pairs">9</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">0</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="age">10</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.10</td>
+<td class="gt_row gt_right" headers="median_correlation">0.04</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.21</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.66</td>
+<td class="gt_row gt_right" headers="negative_pairs">6</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">0</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="age">11</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.12</td>
+<td class="gt_row gt_right" headers="median_correlation">0.06</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.22</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.71</td>
+<td class="gt_row gt_right" headers="negative_pairs">5</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">1</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="age">12</td>
+<td class="gt_row gt_right" headers="mean_correlation">0.10</td>
+<td class="gt_row gt_right" headers="median_correlation">0.00</td>
+<td class="gt_row gt_right" headers="minimum_correlation">-0.33</td>
+<td class="gt_row gt_right" headers="maximum_correlation">0.66</td>
+<td class="gt_row gt_right" headers="negative_pairs">6</td>
+<td class="gt_row gt_right" headers="pairs_ge_0.7">0</td>
+<td class="gt_row gt_right" headers="pairs">21</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-waa-correlation-by-age" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-waa-correlation-by-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="JM_biol_files/figure-html/fig-waa-correlation-by-age-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Mean, median, minimum, and maximum pairwise correlations by age for h1_1.14 fishery and acoustic-survey weight-at-age time series. CPUE indices and DEPM are excluded."><img src="JM_biol_files/figure-html/fig-waa-correlation-by-age-1.png" class="img-fluid figure-img" width="624"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-waa-correlation-by-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Mean, median, minimum, and maximum pairwise correlations by age for h1_1.14 fishery and acoustic-survey weight-at-age time series. CPUE indices and DEPM are excluded.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-waa-boxplot-by-age" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-waa-boxplot-by-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="JM_biol_files/figure-html/fig-waa-boxplot-by-age-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Annual h1_1.14 weight-at-age distributions for ages 1-9 from the reduced fishery and acoustic-survey source set, normalized by the age-specific mean across all retained sources and years. Boxes are shaded by source type and points show the source-specific means."><img src="JM_biol_files/figure-html/fig-waa-boxplot-by-age-1.png" class="img-fluid figure-img" width="787"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-waa-boxplot-by-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Annual h1_1.14 weight-at-age distributions for ages 1-9 from the reduced fishery and acoustic-survey source set, normalized by the age-specific mean across all retained sources and years. Boxes are shaded by source type and points show the source-specific means.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-age3-waa-correlation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-age3-waa-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="JM_biol_files/figure-html/fig-age3-waa-correlation-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Pairwise correlations among h1_1.14 age-3 weight-at-age time series from fishery and acoustic-survey sources. CPUE indices and DEPM are excluded."><img src="JM_biol_files/figure-html/fig-age3-waa-correlation-1.png" class="img-fluid figure-img" width="624"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-age3-waa-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Pairwise correlations among h1_1.14 age-3 weight-at-age time series from fishery and acoustic-survey sources. CPUE indices and DEPM are excluded.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-age3-waa-pairs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-age3-waa-pairs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="JM_biol_files/figure-html/fig-age3-waa-pairs-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Pairs plot for h1_1.14 age-3 weight-at-age time series from the reduced fishery and acoustic-survey source set. Upper panels show pairwise correlations; lower panels show points and a smoother."><img src="JM_biol_files/figure-html/fig-age3-waa-pairs-1.png" class="img-fluid figure-img" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-age3-waa-pairs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Pairs plot for h1_1.14 age-3 weight-at-age time series from the reduced fishery and acoustic-survey source set. Upper panels show pairwise correlations; lower panels show points and a smoother.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-age8-waa-correlation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-age8-waa-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="JM_biol_files/figure-html/fig-age8-waa-correlation-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Pairwise correlations among h1_1.14 age-8 weight-at-age time series from fishery and acoustic-survey sources. CPUE indices and DEPM are excluded."><img src="JM_biol_files/figure-html/fig-age8-waa-correlation-1.png" class="img-fluid figure-img" width="624"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-age8-waa-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Pairwise correlations among h1_1.14 age-8 weight-at-age time series from fishery and acoustic-survey sources. CPUE indices and DEPM are excluded.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-age8-waa-pairs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-age8-waa-pairs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="JM_biol_files/figure-html/fig-age8-waa-pairs-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: Pairs plot for h1_1.14 age-8 weight-at-age time series from the reduced fishery and acoustic-survey source set."><img src="JM_biol_files/figure-html/fig-age8-waa-pairs-1.png" class="img-fluid figure-img" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-age8-waa-pairs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Pairs plot for h1_1.14 age-8 weight-at-age time series from the reduced fishery and acoustic-survey source set.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Items to evaluate:</p>
+<ol type="1">
+<li>Which <code>1.14.dat</code> sections contain Far North fishery and associated index weight-at-age schedules.</li>
+<li>How the historical Far North updates differ from model <code>1.13</code>.</li>
+<li>Whether population, fishery, and survey weight-at-age schedules are internally consistent.</li>
+<li>Whether the updated historical weights change the biological interpretation of catch biomass, spawning biomass, or stock-specific productivity.</li>
+</ol>
+</section>
+</section>
+<section id="results-and-discussion" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Results and discussion</h1>
+<p>This section should synthesize the biological checks rather than repeat the full assessment model description. The expected output is a concise judgement on whether the biological inputs in model <code>1.14</code> are internally consistent, adequately documented, and suitable as the basis for the <code>JM_SCW_prep</code> working paper package.</p>
+<p>The age-structured contribution to estimated spawning biomass from the fitted <code>h2_1.14</code> model is shown in <a href="#fig-h2-ssb-age-timeseries" class="quarto-xref">Figure&nbsp;8</a>. Age groups 7 and older are pooled to keep the time series interpretable while retaining the dominant older-age contribution. Stock 1 has a broader distribution across ages, with substantial contributions from ages 2-5 and a smaller relative contribution from the pooled older ages in recent years. Stock 2 is shifted older because age-1 fish are immature and age-2 maturity is partial; its spawning biomass is therefore concentrated more strongly in ages 3-6 and the 7+ group, with the 7+ group contributing a larger share than in Stock 1.</p>
+<p>The same fitted spawning biomass time series is shown by stock in <a href="#fig-h2-ssb-stock-scale" class="quarto-xref">Figure&nbsp;9</a>. The purpose of this second figure is to show the relative scale of spawning biomass between the two stocks.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-h2-ssb-age-timeseries" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-h2-ssb-age-timeseries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="JM_biol_files/figure-html/fig-h2-ssb-age-timeseries-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Age-structured contribution to estimated spawning biomass from the fitted h2_1.14 model. Ages 7 and older are pooled."><img src="JM_biol_files/figure-html/fig-h2-ssb-age-timeseries-1.png" class="img-fluid figure-img" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-h2-ssb-age-timeseries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Age-structured contribution to estimated spawning biomass from the fitted h2_1.14 model. Ages 7 and older are pooled.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-h2-ssb-stock-scale" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-h2-ssb-stock-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="JM_biol_files/figure-html/fig-h2-ssb-stock-scale-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: Stacked spawning biomass by stock from the fitted h2_1.14 model. This figure is intended to show the relative scale between stocks."><img src="JM_biol_files/figure-html/fig-h2-ssb-stock-scale-1.png" class="img-fluid figure-img" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-h2-ssb-stock-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Stacked spawning biomass by stock from the fitted h2_1.14 model. This figure is intended to show the relative scale between stocks.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Initial points to carry forward:</p>
+<ol type="1">
+<li>The authoritative files remain in <code>jjm/assessment</code>; this repository reads them directly for reproducibility.</li>
+<li>The single-stock and two-stock hypotheses share the same common data file but differ in biological and stock-structure assumptions through their control files.</li>
+<li>The Far North historical weight-at-age update should be evaluated explicitly against model <code>1.13</code>, because that is the defining change from <code>1.13</code> to <code>1.14</code>.</li>
+</ol>
+</section>
+<section id="references" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-sprfmo2025sc13report" class="csl-entry" role="listitem">
+SPRFMO Scientific Committee. 2025a. <em>13th Scientific Committee Meeting Report</em>. South Pacific Regional Fisheries Management Organisation (SPRFMO). <a href="https://sprfmo.int/assets/Meetings/02-SC/13th-SC-2025/SC13-REPORT-ADOPTED-13SEPT2025c.pdf">https://sprfmo.int/assets/Meetings/02-SC/13th-SC-2025/SC13-REPORT-ADOPTED-13SEPT2025c.pdf</a>.
+</div>
+<div id="ref-sprfmo2025annex11" class="csl-entry" role="listitem">
+SPRFMO Scientific Committee. 2025b. <em>Annex 11: Jack Mackerel Technical Annex</em>. South Pacific Regional Fisheries Management Organisation (SPRFMO). <a href="https://sprfmo.int/assets/Meetings/02-SC/13th-SC-2025/SC13-Report-Annex-11_final.pdf">https://sprfmo.int/assets/Meetings/02-SC/13th-SC-2025/SC13-Report-Annex-11_final.pdf</a>.
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

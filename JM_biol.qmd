@@ -1,0 +1,660 @@
+---
+title: "Biological data used in the joint jack mackerel assessment"
+subtitle: "Working paper for JM_SCW_prep"
+author: "Jack Mackerel Working Group"
+date: today
+bibliography: references.bib
+format:
+  html:
+    output-file: "JM_biol.html"
+    lightbox: true
+  pdf:
+    output-file: "JM_biol.pdf"
+---
+
+```{r}
+source("R/read_jjm_text.R")
+source("../jjm/rtmb_jjm/read_jjm.R")
+
+paths <- model_paths(root = "..", model = "1.14")
+h2_rep_path <- file.path("..", "jjm", "assessment", "results", "h2_1.14.rep")
+dat <- read_jjm_sections(paths$input)
+h1_ctl <- read_jjm_sections(paths$h1_ctl)
+h2_ctl <- read_jjm_sections(paths$h2_ctl)
+h1_data <- read_jjm(paths$h1_ctl)$dat
+h1_bio <- summarise_biology(h1_ctl)
+h2_bio <- summarise_biology(h2_ctl)
+model_years <- seq(as.numeric(dat$years[[1]]), as.numeric(dat$years[[2]]))
+```
+
+# Intro
+
+This working paper evaluates the biological inputs used in the joint jack
+mackerel assessment data and control files for model `1.14`. The immediate
+purpose is to provide a focused biological-data review for `JM_SCW_prep`, while
+keeping the assessment inputs and configuration files traceable to the
+neighboring `jjm` repository.
+
+Model `1.14` is the SC13 model update described in `jjm/assessment/README.md`
+as model `1.13` with updates to historical weight-at-age for the Far North
+fleet. The SC13 final report and Jack Mackerel Technical Annex provide the
+formal assessment context for this model series [@sprfmo2025sc13report;
+@sprfmo2025annex11]. The same data file is used with both assessment
+hypotheses: `h1_1.14` for the single-stock model and `h2_1.14` for the
+two-stock model.
+
+# Model data
+
+The source files used by this report are listed in @tbl-source-files.
+
+```{r}
+#| label: tbl-source-files
+#| tbl-cap: "Source files used by this biological-data working paper."
+knitr::kable(
+  data.frame(
+    role = c("Common data file", "Single-stock control file", "Two-stock control file"),
+    path = unlist(paths, use.names = FALSE)
+  ),
+  col.names = c("Role", "Path")
+)
+```
+
+The common data file defines the temporal, age, fleet, composition, index, and
+weight-at-age information used by the model. The control files define how those
+data are mapped to stock hypotheses, including natural mortality, maturity,
+growth, population weight-at-age, catchability, and selectivity assumptions.
+
+```{r}
+#| label: tbl-model-data
+#| tbl-cap: "High-level contents of the model 1.14 data file."
+knitr::kable(summarise_model_data(dat))
+```
+
+The biological review should distinguish between information contained directly
+in `1.14.dat` and assumptions introduced through the `h1_1.14.ctl` and
+`h2_1.14.ctl` control files. This distinction matters because some biological
+quantities are common to both stock hypotheses, while others differ by stock
+hypothesis. @tbl-model-data summarizes the principal dimensions and named data
+components in the common model `1.14` data file.
+
+# Analyses
+
+The analyses below are placeholders for reproducible checks against the model
+`1.14` files. They are intentionally organized around the three biological data
+questions requested for this working paper.
+
+## Natural mortality
+
+Natural mortality is configured in the control files under `#N_Mort`. The
+single-stock model uses one natural mortality value, while the two-stock model
+may assign stock-specific values. These configured values are shown in
+@tbl-natural-mortality.
+
+```{r}
+#| label: tbl-natural-mortality
+#| tbl-cap: "Natural mortality values configured for the model 1.14 stock hypotheses."
+biology <- rbind(
+  summarise_biology(h1_ctl)[, c("model", "stock", "natural_mortality")],
+  summarise_biology(h2_ctl)[, c("model", "stock", "natural_mortality")]
+)
+knitr::kable(biology)
+```
+
+Items to evaluate:
+
+1. Whether the assumed values are consistent with the biological basis used in
+   previous benchmark and annual assessment documents.
+2. Whether stock-specific assumptions in `h2_1.14` are supported by distinct
+   biological evidence.
+3. How sensitive derived spawning biomass and reference points are to plausible
+   alternatives.
+
+## Maturity
+
+Maturity-at-age is configured in the control files under `#Pmatatage`. The
+review should check whether the schedule is common or stock-specific, whether
+age-1 partial maturity remains defensible, and whether the schedule aligns with
+the biological source material used by the assessment.
+
+In the JJM, maturity enters spawning biomass through a maturity-weighted
+population weight-at-age vector. For stock $s$, year $y$, and age $a$, spawning
+biomass is computed as
+
+$$
+SSB_{s,y} =
+\sum_a
+N_{s,y,a}
+S_{s,y,a}^{(m_{\mathrm{spawn}} - 1) / 12}
+w^{\mathrm{pop}}_{s,a}
+p^{\mathrm{mat}}_{s,a},
+$$
+
+where $N_{s,y,a}$ is numbers-at-age at the start of year, $S_{s,y,a} =
+\exp(-Z_{s,y,a})$ is annual survival, $m_{\mathrm{spawn}}$ is the spawning
+month from `#Pspwn` in the data file, $w^{\mathrm{pop}}_{s,a}$ is the
+population weight-at-age from `#Pwtatage`, and $p^{\mathrm{mat}}_{s,a}$ is
+maturity-at-age from `#Pmatatage`. For model `1.14`, `#Pspwn` is 10.5, so the
+spawning calculation occurs after $(10.5 - 1) / 12 = 0.792$ of annual mortality
+has occurred.
+
+The weight-at-age used in this equation is the stock-specific population
+weight-at-age in the control file. It is fixed through time within each stock.
+The time-varying fishery and index weight-at-age arrays in `1.14.dat`
+(`Fwtatage` and `Iwtatage`) are used for predicted catch and index biomass, not
+for spawning biomass.
+
+For the two-stock `h2_1.14` model, the corresponding unfished spawning biomass
+per recruit, multiplied by 1000, is 1597.8 for Stock 1 and 1367.3 for Stock 2.
+These values use the stock-specific natural mortality, maturity-at-age, and
+population weight-at-age schedules in `h2_1.14.ctl`, with spawning at month
+10.5 and the age-12 plus group.
+The age-specific contribution to those two values is shown in
+@fig-h2-sbpr-at-age.
+
+```{r}
+#| label: fig-h2-sbpr-at-age
+#| fig-cap: "Age-specific spawning biomass per recruit for the two stocks in h2_1.14, multiplied by 1000."
+#| fig-width: 7
+#| fig-height: 4
+h2_sbpr_at_age <- do.call(rbind, lapply(seq_len(nrow(h2_bio)), function(i) {
+  natural_mortality <- h2_bio$natural_mortality[[i]]
+  annual_survival <- exp(-natural_mortality)
+  numbers_at_age <- numeric(12)
+  numbers_at_age[[1]] <- 1
+  for (age in 2:12) {
+    numbers_at_age[[age]] <- numbers_at_age[[age - 1]] * annual_survival
+  }
+  numbers_at_age[[12]] <- numbers_at_age[[12]] / (1 - annual_survival)
+
+  data.frame(
+    stock = h2_bio$stock[[i]],
+    age = seq_along(numbers_at_age),
+    spawning_biomass = 1000 *
+      numbers_at_age *
+      exp(-natural_mortality * ((as.numeric(dat$Pspwn) - 1) / 12)) *
+      h2_bio$population_weight_at_age[[i]] *
+      h2_bio$maturity_at_age[[i]]
+  )
+}))
+
+ggplot2::ggplot(
+  h2_sbpr_at_age,
+  ggplot2::aes(x = age, y = spawning_biomass, fill = stock)
+) +
+  ggplot2::geom_col(
+    position = ggplot2::position_dodge(width = 0.8),
+    width = 0.7,
+    color = "white",
+    linewidth = 0.25
+  ) +
+  ggplot2::scale_x_continuous(breaks = seq(1, 12, by = 1)) +
+  ggplot2::labs(x = "age", y = "spawning biomass", fill = "Stock") +
+  ggplot2::theme_minimal(base_size = 11) +
+  ggplot2::theme(
+    panel.grid.minor = ggplot2::element_blank(),
+    legend.position = "top"
+  )
+```
+
+```{r}
+#| label: tbl-maturity-preview
+#| tbl-cap: "Maturity-at-age vectors read from the h2_1.14 control file."
+make_vector_table <- function(x, value_name) {
+  do.call(rbind, lapply(seq_len(nrow(x)), function(i) {
+    values <- x[[value_name]][[i]]
+    data.frame(
+      model = x$model[[i]],
+      stock = x$stock[[i]],
+      age = seq_along(values),
+      value = values
+    )
+  }))
+}
+
+mat_tbl <- make_vector_table(h2_bio, "maturity_at_age")
+knitr::kable(mat_tbl)
+```
+
+The maturity-at-age schedules used in the spawning biomass calculation are
+listed by stock for the two-stock model in @tbl-maturity-preview. The
+single-stock model uses the same maturity schedule as Stock 1 in `h2_1.14`.
+
+```{r}
+#| label: tbl-ssb-weight-at-age
+#| tbl-cap: "Population weight-at-age used with maturity-at-age in the h2_1.14 spawning biomass equation."
+ssb_wt_tbl <- make_vector_table(h2_bio, "population_weight_at_age")
+names(ssb_wt_tbl)[names(ssb_wt_tbl) == "value"] <- "population_weight_at_age"
+knitr::kable(ssb_wt_tbl)
+```
+
+The population weight-at-age vectors paired with maturity in the spawning
+biomass equation are shown for the two-stock model in @tbl-ssb-weight-at-age.
+Again, the single-stock model uses the same vector as Stock 1 in `h2_1.14`.
+
+## Weight-at-age
+
+Weight-at-age is the central biological data issue for this working paper
+because model `1.14` is specifically identified as updating historical
+weight-at-age for the Far North fleet. The model includes population
+weight-at-age in the control files and fishery or survey weight-at-age schedules
+in the data file. The fixed population weight-at-age vectors used for spawning
+biomass are repeated for `h2_1.14` in @tbl-pop-weight-at-age to separate them
+from time-varying fishery and index weights-at-age.
+
+```{r}
+#| label: tbl-pop-weight-at-age
+#| tbl-cap: "Population weight-at-age vectors read from the h2_1.14 control file."
+waa_tbl <- make_vector_table(h2_bio, "population_weight_at_age")
+knitr::kable(waa_tbl)
+```
+
+```{r}
+#| include: false
+h1_weight_sources <- c(
+  paste0("Fishery: ", h1_data$fsh_names),
+  paste0("Index: ", h1_data$ind_names)
+)
+h1_weight_array <- array(
+  NA_real_,
+  dim = c(length(h1_weight_sources), h1_data$nyrs, h1_data$nages),
+  dimnames = list(h1_weight_sources, model_years, seq_len(h1_data$nages))
+)
+h1_weight_array[seq_along(h1_data$fsh_names), , ] <- h1_data$wt_fsh
+h1_weight_array[length(h1_data$fsh_names) + seq_along(h1_data$ind_names), , ] <- h1_data$wt_ind
+
+h1_heatmap_sources <- !grepl("CPUE|DEPM", h1_weight_sources)
+
+h1_weight_cor_by_age <- lapply(seq_len(h1_data$nages), function(age_index) {
+  stats::cor(t(h1_weight_array[h1_heatmap_sources, , age_index]), use = "pairwise.complete.obs")
+})
+
+h1_weight_cor_summary <- do.call(rbind, lapply(seq_along(h1_weight_cor_by_age), function(age_index) {
+  pairwise_cor <- h1_weight_cor_by_age[[age_index]][upper.tri(h1_weight_cor_by_age[[age_index]])]
+  data.frame(
+    age = age_index,
+    mean_correlation = mean(pairwise_cor, na.rm = TRUE),
+    median_correlation = stats::median(pairwise_cor, na.rm = TRUE),
+    minimum_correlation = min(pairwise_cor, na.rm = TRUE),
+    maximum_correlation = max(pairwise_cor, na.rm = TRUE),
+    negative_pairs = sum(pairwise_cor < 0, na.rm = TRUE),
+    pairs_ge_0.7 = sum(pairwise_cor >= 0.7, na.rm = TRUE),
+    pairs = sum(!is.na(pairwise_cor))
+  )
+}))
+
+h1_weight_cor_summary_print <- h1_weight_cor_summary
+h1_weight_cor_summary_print[, c(
+  "mean_correlation", "median_correlation", "minimum_correlation", "maximum_correlation"
+)] <- round(h1_weight_cor_summary_print[, c(
+  "mean_correlation", "median_correlation", "minimum_correlation", "maximum_correlation"
+)], 2)
+
+h1_weight_long <- do.call(rbind, lapply(seq_len(h1_data$nages), function(age_index) {
+  age_weights <- h1_weight_array[h1_heatmap_sources, , age_index, drop = FALSE]
+  data.frame(
+    source = rep(dimnames(age_weights)[[1]], each = h1_data$nyrs),
+    gear_type = rep(sub(":.*$", "", dimnames(age_weights)[[1]]), each = h1_data$nyrs),
+    source_label = rep(gsub("^(Fishery|Index): ", "", dimnames(age_weights)[[1]]), each = h1_data$nyrs),
+    year = rep(model_years, times = sum(h1_heatmap_sources)),
+    age = age_index,
+    weight_at_age = as.vector(t(age_weights[, , 1]))
+  )
+}))
+h1_weight_long$normalized_weight_at_age <- ave(
+  h1_weight_long$weight_at_age,
+  h1_weight_long$age,
+  FUN = function(x) x / mean(x, na.rm = TRUE)
+)
+h1_weight_long$gear_type <- factor(h1_weight_long$gear_type, levels = c("Fishery", "Index"))
+h1_weight_long$source_label <- factor(
+  h1_weight_long$source_label,
+  levels = unique(h1_weight_long$source_label)
+)
+
+h1_age3_cor <- h1_weight_cor_by_age[[3]]
+h1_age3_cor_long <- as.data.frame(as.table(h1_age3_cor))
+names(h1_age3_cor_long) <- c("source_x", "source_y", "correlation")
+h1_age3_pairs <- as.data.frame(t(h1_weight_array[h1_heatmap_sources, , 3]))
+names(h1_age3_pairs) <- gsub("^(Fishery|Index): ", "", names(h1_age3_pairs))
+
+h1_age8_cor <- h1_weight_cor_by_age[[8]]
+h1_age8_cor_long <- as.data.frame(as.table(h1_age8_cor))
+names(h1_age8_cor_long) <- c("source_x", "source_y", "correlation")
+
+h1_age8_pairs <- as.data.frame(t(h1_weight_array[h1_heatmap_sources, , 8]))
+names(h1_age8_pairs) <- gsub("^(Fishery|Index): ", "", names(h1_age8_pairs))
+```
+
+For the single-stock model `h1_1.14`, correlations among fishery and
+acoustic-survey weight-at-age sources are generally modest across ages
+(@tbl-waa-correlation-summary), with the age pattern shown in
+@fig-waa-correlation-by-age. CPUE indices and DEPM are excluded because the CPUE
+weights-at-age duplicate their associated fishery series and DEPM is omitted
+here to simplify the source comparison.
+The annual distributions of weight-at-age from this same reduced source set are
+shown for ages 1-9 in @fig-waa-boxplot-by-age; the plotted points mark the
+overall mean normalized weight-at-age for each source and age.
+For age 3, the median cross-source correlation is
+`r round(h1_weight_cor_summary$median_correlation[h1_weight_cor_summary$age == 3], 2)`,
+with `r h1_weight_cor_summary$negative_pairs[h1_weight_cor_summary$age == 3]`
+negative source pairs out of
+`r h1_weight_cor_summary$pairs[h1_weight_cor_summary$age == 3]` total pairs.
+The age-3 heatmap in @fig-age3-waa-correlation shows that several high
+correlations are expected because some data sources share related biological
+sampling and imputation histories. For age 3, `FarNorth` remains strongly
+correlated with `Peru_Acoustic`. The same age-3 source subset is shown as a
+pairs plot in @fig-age3-waa-pairs, with pairwise correlations in the upper
+triangle and smoothed scatterplots in the lower triangle.
+Age 8 has the highest mean pairwise correlation among the age-specific
+weight-at-age series in @tbl-waa-correlation-summary; the corresponding
+correlation heatmap for the same reduced source set is shown in
+@fig-age8-waa-correlation. The same age-8 source subset is also shown as a
+pairs plot in @fig-age8-waa-pairs, which makes the linearity and outlying years
+behind the pairwise correlations easier to inspect.
+
+```{r}
+#| label: tbl-waa-correlation-summary
+#| tbl-cap: "Pairwise correlations among h1_1.14 fishery and acoustic-survey weight-at-age time series, summarized by age. CPUE indices and DEPM are excluded."
+gt::gt(h1_weight_cor_summary_print)
+```
+
+```{r}
+#| label: fig-waa-correlation-by-age
+#| fig-cap: "Mean, median, minimum, and maximum pairwise correlations by age for h1_1.14 fishery and acoustic-survey weight-at-age time series. CPUE indices and DEPM are excluded."
+#| fig-width: 6.5
+#| fig-height: 4.2
+ggplot2::ggplot(
+  h1_weight_cor_summary,
+  ggplot2::aes(x = age)
+) +
+  ggplot2::geom_ribbon(
+    ggplot2::aes(ymin = minimum_correlation, ymax = maximum_correlation),
+    fill = "#b9c7d8",
+    alpha = 0.55
+  ) +
+  ggplot2::geom_line(
+    ggplot2::aes(y = mean_correlation, color = "Mean"),
+    linewidth = 0.9
+  ) +
+  ggplot2::geom_point(
+    ggplot2::aes(y = mean_correlation, color = "Mean"),
+    size = 1.8
+  ) +
+  ggplot2::geom_line(
+    ggplot2::aes(y = median_correlation, color = "Median"),
+    linewidth = 0.9,
+    linetype = "22"
+  ) +
+  ggplot2::geom_point(
+    ggplot2::aes(y = median_correlation, color = "Median"),
+    size = 1.8
+  ) +
+  ggplot2::scale_x_continuous(breaks = seq_len(h1_data$nages)) +
+  ggplot2::scale_y_continuous(limits = c(-1, 1)) +
+  ggplot2::scale_color_manual(
+    values = c("Mean" = "#2f5d8c", "Median" = "#b64a3b"),
+    name = "Summary"
+  ) +
+  ggplot2::labs(x = "age", y = "summary correlation") +
+  ggplot2::theme_minimal(base_size = 11) +
+  ggplot2::theme(
+    panel.grid.minor = ggplot2::element_blank(),
+    legend.position = "top"
+  )
+```
+
+```{r}
+#| label: fig-waa-boxplot-by-age
+#| fig-cap: "Annual h1_1.14 weight-at-age distributions for ages 1-9 from the reduced fishery and acoustic-survey source set, normalized by the age-specific mean across all retained sources and years. Boxes are shaded by source type and points show the source-specific means."
+#| fig-width: 8.2
+#| fig-height: 7.2
+ggplot2::ggplot(
+  subset(h1_weight_long, age <= 9),
+  ggplot2::aes(x = source_label, y = normalized_weight_at_age, fill = gear_type)
+) +
+  ggplot2::geom_boxplot(
+    width = 0.65,
+    outlier.size = 0.6,
+    color = "#374151"
+  ) +
+  ggplot2::stat_summary(
+    fun = mean,
+    geom = "point",
+    shape = 21,
+    size = 1.8,
+    fill = "#b64a3b",
+    color = "white",
+    stroke = 0.25
+  ) +
+  ggplot2::geom_hline(yintercept = 1, color = "#6b7280", linetype = "22", linewidth = 0.3) +
+  ggplot2::facet_wrap(~ age, ncol = 3, scales = "free_y", labeller = ggplot2::label_both) +
+  ggplot2::scale_fill_manual(values = c("Fishery" = "#8fb6d9", "Index" = "#d9b48f"), name = "Gear type") +
+  ggplot2::labs(x = "gear/source", y = "normalized weight-at-age") +
+  ggplot2::theme_minimal(base_size = 9) +
+  ggplot2::theme(
+    axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
+    panel.grid.minor = ggplot2::element_blank(),
+    legend.position = "top"
+  )
+```
+
+```{r}
+#| label: fig-age3-waa-correlation
+#| fig-cap: "Pairwise correlations among h1_1.14 age-3 weight-at-age time series from fishery and acoustic-survey sources. CPUE indices and DEPM are excluded."
+#| fig-width: 6.5
+#| fig-height: 5.5
+ggplot2::ggplot(
+  h1_age3_cor_long,
+  ggplot2::aes(x = source_x, y = source_y, fill = correlation)
+) +
+  ggplot2::geom_tile(color = "white", linewidth = 0.25) +
+  ggplot2::scale_fill_gradient2(
+    low = "#3b6fb6",
+    mid = "white",
+    high = "#b64a3b",
+    midpoint = 0,
+    limits = c(-1, 1),
+    name = "r"
+  ) +
+  ggplot2::coord_equal() +
+  ggplot2::labs(x = NULL, y = NULL) +
+  ggplot2::theme_minimal(base_size = 9) +
+  ggplot2::theme(
+    axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
+    panel.grid = ggplot2::element_blank(),
+    legend.position = "top"
+  )
+```
+
+```{r}
+#| label: fig-age3-waa-pairs
+#| fig-cap: "Pairs plot for h1_1.14 age-3 weight-at-age time series from the reduced fishery and acoustic-survey source set. Upper panels show pairwise correlations; lower panels show points and a smoother."
+#| fig-width: 8
+#| fig-height: 8
+panel_cor <- function(x, y, digits = 2, prefix = "r = ", cex.cor = 1.2, ...) {
+  usr <- graphics::par("usr")
+  on.exit(graphics::par(usr))
+  graphics::par(usr = c(0, 1, 0, 1))
+  r <- stats::cor(x, y, use = "pairwise.complete.obs")
+  label <- paste0(prefix, formatC(r, digits = digits, format = "f"))
+  graphics::text(0.5, 0.5, label, cex = cex.cor)
+}
+
+panel_smooth <- function(x, y, ...) {
+  graphics::points(
+    x,
+    y,
+    pch = 16,
+    cex = 0.45,
+    col = grDevices::adjustcolor("#2f5d8c", alpha.f = 0.55)
+  )
+  smooth <- stats::lowess(x, y)
+  graphics::lines(smooth, col = "#b64a3b", lwd = 1.5)
+}
+
+graphics::pairs(
+  h1_age3_pairs,
+  upper.panel = panel_cor,
+  lower.panel = panel_smooth,
+  diag.panel = NULL,
+  gap = 0.35
+)
+```
+
+```{r}
+#| label: fig-age8-waa-correlation
+#| fig-cap: "Pairwise correlations among h1_1.14 age-8 weight-at-age time series from fishery and acoustic-survey sources. CPUE indices and DEPM are excluded."
+#| fig-width: 6.5
+#| fig-height: 5.5
+ggplot2::ggplot(
+  h1_age8_cor_long,
+  ggplot2::aes(x = source_x, y = source_y, fill = correlation)
+) +
+  ggplot2::geom_tile(color = "white", linewidth = 0.25) +
+  ggplot2::scale_fill_gradient2(
+    low = "#3b6fb6",
+    mid = "white",
+    high = "#b64a3b",
+    midpoint = 0,
+    limits = c(-1, 1),
+    name = "r"
+  ) +
+  ggplot2::coord_equal() +
+  ggplot2::labs(x = NULL, y = NULL) +
+  ggplot2::theme_minimal(base_size = 9) +
+  ggplot2::theme(
+    axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
+    panel.grid = ggplot2::element_blank(),
+    legend.position = "top"
+  )
+```
+
+```{r}
+#| label: fig-age8-waa-pairs
+#| fig-cap: "Pairs plot for h1_1.14 age-8 weight-at-age time series from the reduced fishery and acoustic-survey source set."
+#| fig-width: 8
+#| fig-height: 8
+graphics::pairs(
+  h1_age8_pairs,
+  pch = 16,
+  cex = 0.45,
+  col = grDevices::adjustcolor("#2f5d8c", alpha.f = 0.55),
+  gap = 0.35
+)
+```
+
+Items to evaluate:
+
+1. Which `1.14.dat` sections contain Far North fishery and associated index
+   weight-at-age schedules.
+2. How the historical Far North updates differ from model `1.13`.
+3. Whether population, fishery, and survey weight-at-age schedules are
+   internally consistent.
+4. Whether the updated historical weights change the biological interpretation
+   of catch biomass, spawning biomass, or stock-specific productivity.
+
+# Results and discussion
+
+This section should synthesize the biological checks rather than repeat the full
+assessment model description. The expected output is a concise judgement on
+whether the biological inputs in model `1.14` are internally consistent,
+adequately documented, and suitable as the basis for the `JM_SCW_prep` working
+paper package.
+
+The age-structured contribution to estimated spawning biomass from the fitted
+`h2_1.14` model is shown in @fig-h2-ssb-age-timeseries. Age groups 7 and older
+are pooled to keep the time series interpretable while retaining the dominant
+older-age contribution. Stock 1 has a broader distribution across ages, with
+substantial contributions from ages 2-5 and a smaller relative contribution from
+the pooled older ages in recent years. Stock 2 is shifted older because age-1
+fish are immature and age-2 maturity is partial; its spawning biomass is
+therefore concentrated more strongly in ages 3-6 and the 7+ group, with the 7+
+group contributing a larger share than in Stock 1.
+
+The same fitted spawning biomass time series is shown by stock in
+@fig-h2-ssb-stock-scale. The purpose of this second figure is to show the
+relative scale of spawning biomass between the two stocks.
+
+```{r}
+#| label: fig-h2-ssb-age-timeseries
+#| fig-cap: "Age-structured contribution to estimated spawning biomass from the fitted h2_1.14 model. Ages 7 and older are pooled."
+#| fig-width: 8
+#| fig-height: 7
+h2_ssb_contribution <- read_h2_spawning_contribution(
+  rep_path = h2_rep_path,
+  h2_bio = h2_bio,
+  years = model_years,
+  spawn_month = as.numeric(dat$Pspwn)
+)
+
+h2_ssb_contribution$age_group <- ifelse(
+  h2_ssb_contribution$age >= 7,
+  "7+",
+  as.character(h2_ssb_contribution$age)
+)
+h2_ssb_contribution$age_group <- factor(
+  h2_ssb_contribution$age_group,
+  levels = c(as.character(1:6), "7+")
+)
+
+h2_ssb_age_plot <- aggregate(
+  spawning_biomass ~ stock + year + age_group,
+  data = h2_ssb_contribution,
+  FUN = sum
+)
+
+ggplot2::ggplot(
+  h2_ssb_age_plot,
+  ggplot2::aes(x = year, y = spawning_biomass, fill = age_group)
+) +
+  ggplot2::geom_col(width = 0.9) +
+  ggplot2::facet_wrap(~ stock, ncol = 1, scales = "free_y") +
+  ggplot2::scale_x_continuous(breaks = seq(min(model_years), max(model_years), by = 5)) +
+  ggplot2::labs(x = "year", y = "spawning biomass contribution", fill = "Age") +
+  ggplot2::theme_minimal(base_size = 11) +
+  ggplot2::theme(
+    panel.grid.minor = ggplot2::element_blank(),
+    legend.position = "top"
+  )
+```
+
+```{r}
+#| label: fig-h2-ssb-stock-scale
+#| fig-cap: "Stacked spawning biomass by stock from the fitted h2_1.14 model. This figure is intended to show the relative scale between stocks."
+#| fig-width: 8
+#| fig-height: 4.5
+h2_ssb_stock_plot <- aggregate(
+  spawning_biomass ~ stock + year,
+  data = h2_ssb_contribution,
+  FUN = sum
+)
+
+ggplot2::ggplot(
+  h2_ssb_stock_plot,
+  ggplot2::aes(x = year, y = spawning_biomass, fill = stock)
+) +
+  ggplot2::geom_area(alpha = 0.9, color = "white", linewidth = 0.2) +
+  ggplot2::scale_x_continuous(breaks = seq(min(model_years), max(model_years), by = 5)) +
+  ggplot2::labs(x = "year", y = "spawning biomass", fill = "Stock") +
+  ggplot2::theme_minimal(base_size = 11) +
+  ggplot2::theme(
+    panel.grid.minor = ggplot2::element_blank(),
+    legend.position = "top"
+  )
+```
+
+Initial points to carry forward:
+
+1. The authoritative files remain in `jjm/assessment`; this repository reads
+   them directly for reproducibility.
+2. The single-stock and two-stock hypotheses share the same common data file but
+   differ in biological and stock-structure assumptions through their control
+   files.
+3. The Far North historical weight-at-age update should be evaluated explicitly
+   against model `1.13`, because that is the defining change from `1.13` to
+   `1.14`.
+
+# References
+
+::: {#refs}
+:::
