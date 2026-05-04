@@ -332,7 +332,7 @@ acoustic-survey weight-at-age sources are generally modest across ages
 weights-at-age duplicate their associated fishery series and DEPM is omitted
 here to simplify the source comparison.
 The annual distributions of weight-at-age from this same reduced source set are
-shown for ages 1-9 in @fig-waa-boxplot-by-age; the plotted points mark the
+shown for ages 1-9 in @fig-waa-violin-by-age; the plotted points mark the
 overall mean normalized weight-at-age for each source and age.
 For age 3, the median cross-source correlation is
 `r round(h1_weight_cor_summary$median_correlation[h1_weight_cor_summary$age == 3], 2)`,
@@ -404,18 +404,20 @@ ggplot2::ggplot(
 ```
 
 ```{r}
-#| label: fig-waa-boxplot-by-age
-#| fig-cap: "Annual h1_1.14 weight-at-age distributions for ages 1-9 from the reduced fishery and acoustic-survey source set, normalized by the age-specific mean across all retained sources and years. Boxes are shaded by source type and points show the source-specific means."
+#| label: fig-waa-violin-by-age
+#| fig-cap: "Annual h1_1.14 weight-at-age distributions for ages 1-9 from the reduced fishery and acoustic-survey source set, normalized by the age-specific mean across all retained sources and years. Violins are filled by source and points show the source-specific means."
 #| fig-width: 8.2
 #| fig-height: 7.2
 ggplot2::ggplot(
   subset(h1_weight_long, age <= 9),
-  ggplot2::aes(x = source_label, y = normalized_weight_at_age, fill = gear_type)
+  ggplot2::aes(x = source_label, y = normalized_weight_at_age, fill = source_label)
 ) +
-  ggplot2::geom_boxplot(
-    width = 0.65,
-    outlier.size = 0.6,
-    color = "#374151"
+  ggplot2::geom_violin(
+    width = 0.82,
+    color = "#374151",
+    linewidth = 0.25,
+    scale = "width",
+    trim = FALSE
   ) +
   ggplot2::stat_summary(
     fun = mean,
@@ -428,7 +430,18 @@ ggplot2::ggplot(
   ) +
   ggplot2::geom_hline(yintercept = 1, color = "#6b7280", linetype = "22", linewidth = 0.3) +
   ggplot2::facet_wrap(~ age, ncol = 3, scales = "free_y", labeller = ggplot2::label_both) +
-  ggplot2::scale_fill_manual(values = c("Fishery" = "#8fb6d9", "Index" = "#d9b48f"), name = "Gear type") +
+  ggplot2::scale_fill_manual(
+    values = c(
+      "N_Chile" = "#4c78a8",
+      "SC_Chile_PS" = "#f58518",
+      "FarNorth" = "#54a24b",
+      "Offshore_Trawl" = "#b279a2",
+      "Chile_AcousCS" = "#e45756",
+      "Chile_AcousN" = "#72b7b2",
+      "Peru_Acoustic" = "#9d755d"
+    ),
+    name = "Source"
+  ) +
   ggplot2::labs(x = "gear/source", y = "normalized weight-at-age") +
   ggplot2::theme_minimal(base_size = 9) +
   ggplot2::theme(
