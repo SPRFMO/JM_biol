@@ -2448,11 +2448,12 @@ border-bottom: 4px solid #1b4576;
 <section id="intro" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Intro</h1>
 <p><strong>1.</strong> This working paper evaluates the biological inputs used in the joint jack mackerel assessment data and control files for model <code>1.14</code>. The immediate purpose is to provide a focused biological-data review for <code>JM_SCW_prep</code>, while keeping the assessment inputs and configuration files traceable to the neighboring <code>jjm</code> repository.</p>
-<p><strong>2.</strong> Model <code>1.14</code> is the SC13 model update described in <code>jjm/assessment/README.md</code> as model <code>1.13</code> with updates to historical weight-at-age for the Far North fleet. The SC13 final report and Jack Mackerel Technical Annex provide the formal assessment context for this model series <span class="citation" data-cites="sprfmo2025sc13report sprfmo2025annex11">(<a href="#ref-sprfmo2025sc13report" role="doc-biblioref">SPRFMO Scientific Committee, 2025a</a>, <a href="#ref-sprfmo2025annex11" role="doc-biblioref">2025b</a>)</span>. The same data file is used with both assessment hypotheses: <code>h1_1.14</code> for the single-stock model and <code>h2_1.14</code> for the two-stock model.</p>
+<p><strong>2.</strong> This contribution extends from the 2022 Jack Mackerel Benchmark Workshop (SCW14) and its final report, which provide the previous benchmark basis for the joint jack mackerel assessment <span class="citation" data-cites="sprfmo2022scw14 sprfmo2022scw14report">(<a href="#ref-sprfmo2022scw14" role="doc-biblioref">SPRFMO Scientific Committee, 2022a</a>, <a href="#ref-sprfmo2022scw14report" role="doc-biblioref">2022b</a>)</span>.</p>
+<p><strong>3.</strong> Model <code>1.14</code> is the SC13 model update described in <code>jjm/assessment/README.md</code> as model <code>1.13</code> with updates to historical weight-at-age for the Far North fleet. The SC13 final report and Jack Mackerel Technical Annex provide the formal assessment context for this model series <span class="citation" data-cites="sprfmo2025sc13report sprfmo2025annex11">(<a href="#ref-sprfmo2025sc13report" role="doc-biblioref">SPRFMO Scientific Committee, 2025a</a>, <a href="#ref-sprfmo2025annex11" role="doc-biblioref">2025b</a>)</span>. The same data file is used with both assessment hypotheses: <code>h1_1.14</code> for the single-stock model and <code>h2_1.14</code> for the two-stock model.</p>
 </section>
 <section id="model-data" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Model data</h1>
-<p><strong>3.</strong> The source files used by this report are listed in <a href="#tbl-source-files" class="quarto-xref">Table 1</a>.</p>
+<p><strong>4.</strong> The source files used by this report are listed in <a href="#tbl-source-files" class="quarto-xref">Table 1</a>.</p>
 <div class="cell">
 <div id="tbl-source-files" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -2488,7 +2489,7 @@ Table 1: Source files used by this biological-data working paper.
 </figure>
 </div>
 </div>
-<p><strong>4.</strong> The common data file defines the temporal, age, fleet, composition, index, and weight-at-age information used by the model. The control files define how those data are mapped to stock hypotheses, including natural mortality, maturity, growth, population weight-at-age, catchability, and selectivity assumptions.</p>
+<p><strong>5.</strong> The common data file defines the temporal, age, fleet, composition, index, and weight-at-age information used by the model. The control files define how those data are mapped to stock hypotheses, including natural mortality, maturity, growth, population weight-at-age, catchability, and selectivity assumptions.</p>
 <div class="cell">
 <div id="tbl-model-data" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -2532,14 +2533,14 @@ Table 2: High-level contents of the model 1.14 data file.
 </figure>
 </div>
 </div>
-<p><strong>5.</strong> The biological review should distinguish between information contained directly in <code>1.14.dat</code> and assumptions introduced through the <code>h1_1.14.ctl</code> and <code>h2_1.14.ctl</code> control files. This distinction matters because some biological quantities are common to both stock hypotheses, while others differ by stock hypothesis. <a href="#tbl-model-data" class="quarto-xref">Table 2</a> summarizes the principal dimensions and named data components in the common model <code>1.14</code> data file.</p>
+<p><strong>6.</strong> The biological review should distinguish between information contained directly in <code>1.14.dat</code> and assumptions introduced through the <code>h1_1.14.ctl</code> and <code>h2_1.14.ctl</code> control files. This distinction matters because some biological quantities are common to both stock hypotheses, while others differ by stock hypothesis. <a href="#tbl-model-data" class="quarto-xref">Table 2</a> summarizes the principal dimensions and named data components in the common model <code>1.14</code> data file.</p>
 </section>
 <section id="analyses" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Analyses</h1>
-<p><strong>6.</strong> The analyses below are placeholders for reproducible checks against the model <code>1.14</code> files. They are intentionally organized around the three biological data questions requested for this working paper.</p>
+<p><strong>7.</strong> The analyses below are placeholders for reproducible checks against the model <code>1.14</code> files. They are intentionally organized around the three biological data questions requested for this working paper.</p>
 <section id="natural-mortality" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="natural-mortality"><span class="header-section-number">3.1</span> Natural mortality</h2>
-<p><strong>7.</strong> Natural mortality is configured in the control files under <code>#N_Mort</code>. The single-stock model uses one natural mortality value, while the two-stock model may assign stock-specific values. These configured values are shown in <a href="#tbl-natural-mortality" class="quarto-xref">Table 3</a>.</p>
+<p><strong>8.</strong> Natural mortality is configured in the control files under <code>#N_Mort</code>. The single-stock model uses one natural mortality value, while the two-stock model may assign stock-specific values. These configured values are shown in <a href="#tbl-natural-mortality" class="quarto-xref">Table 3</a>.</p>
 <div class="cell">
 <div id="tbl-natural-mortality" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -2583,7 +2584,7 @@ Table 3: Natural mortality values configured for the model 1.14 stock hypothese
 </figure>
 </div>
 </div>
-<p><strong>8.</strong> Items to evaluate:</p>
+<p><strong>9.</strong> Items to evaluate:</p>
 <ol type="1">
 <li>Whether the assumed values are consistent with the biological basis used in previous benchmark and annual assessment documents.</li>
 <li>Whether stock-specific assumptions in <code>h2_1.14</code> are supported by distinct biological evidence.</li>
@@ -2592,9 +2593,9 @@ Table 3: Natural mortality values configured for the model 1.14 stock hypothese
 </section>
 <section id="maturity" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="maturity"><span class="header-section-number">3.2</span> Maturity</h2>
-<p><strong>9.</strong> Maturity-at-age is configured in the control files under <code>#Pmatatage</code>. The review should check whether the schedule is common or stock-specific, whether age-1 partial maturity remains defensible, and whether the schedule aligns with the biological source material used by the assessment.</p>
-<p><strong>10.</strong> In the JJM, maturity enters spawning biomass through a maturity-weighted population weight-at-age vector. For stock <span class="math inline">s</span>, year <span class="math inline">y</span>, and age <span class="math inline">a</span>, spawning biomass is computed as</p>
-<p><strong>11.</strong> <span class="math display">
+<p><strong>10.</strong> Maturity-at-age is configured in the control files under <code>#Pmatatage</code>. The review should check whether the schedule is common or stock-specific, whether age-1 partial maturity remains defensible, and whether the schedule aligns with the biological source material used by the assessment.</p>
+<p><strong>11.</strong> In the JJM, maturity enters spawning biomass through a maturity-weighted population weight-at-age vector. For stock <span class="math inline">s</span>, year <span class="math inline">y</span>, and age <span class="math inline">a</span>, spawning biomass is computed as</p>
+<p><strong>12.</strong> <span class="math display">
 SSB_{s,y} =
 \sum_a
 N_{s,y,a}
@@ -2602,10 +2603,10 @@ S_{s,y,a}^{(m_{\mathrm{spawn}} - 1) / 12}
 w^{\mathrm{pop}}_{s,a}
 p^{\mathrm{mat}}_{s,a},
 </span></p>
-<p><strong>12.</strong> where <span class="math inline">N_{s,y,a}</span> is numbers-at-age at the start of year, <span class="math inline">S_{s,y,a} =
+<p><strong>13.</strong> where <span class="math inline">N_{s,y,a}</span> is numbers-at-age at the start of year, <span class="math inline">S_{s,y,a} =
 \exp(-Z_{s,y,a})</span> is annual survival, <span class="math inline">m_{\mathrm{spawn}}</span> is the spawning month from <code>#Pspwn</code> in the data file, <span class="math inline">w^{\mathrm{pop}}_{s,a}</span> is the population weight-at-age from <code>#Pwtatage</code>, and <span class="math inline">p^{\mathrm{mat}}_{s,a}</span> is maturity-at-age from <code>#Pmatatage</code>. For model <code>1.14</code>, <code>#Pspwn</code> is 10.5, so the spawning calculation occurs after <span class="math inline">(10.5 - 1) / 12 = 0.792</span> of annual mortality has occurred.</p>
-<p><strong>13.</strong> The weight-at-age used in this equation is the stock-specific population weight-at-age in the control file. It is fixed through time within each stock. The time-varying fishery and index weight-at-age arrays in <code>1.14.dat</code> (<code>Fwtatage</code> and <code>Iwtatage</code>) are used for predicted catch and index biomass, not for spawning biomass.</p>
-<p><strong>14.</strong> For the two-stock <code>h2_1.14</code> model, the corresponding unfished spawning biomass per recruit, multiplied by 1000, is 1597.8 for Stock 1 and 1367.3 for Stock 2. These values use the stock-specific natural mortality, maturity-at-age, and population weight-at-age schedules in <code>h2_1.14.ctl</code>, with spawning at month 10.5 and the age-12 plus group. The age-specific contribution to those two values is shown in <a href="#fig-h2-sbpr-at-age" class="quarto-xref">Figure 1</a>.</p>
+<p><strong>14.</strong> The weight-at-age used in this equation is the stock-specific population weight-at-age in the control file. It is fixed through time within each stock. The time-varying fishery and index weight-at-age arrays in <code>1.14.dat</code> (<code>Fwtatage</code> and <code>Iwtatage</code>) are used for predicted catch and index biomass, not for spawning biomass.</p>
+<p><strong>15.</strong> For the two-stock <code>h2_1.14</code> model, the corresponding unfished spawning biomass per recruit, multiplied by 1000, is 1597.8 for Stock 1 and 1367.3 for Stock 2. These values use the stock-specific natural mortality, maturity-at-age, and population weight-at-age schedules in <code>h2_1.14.ctl</code>, with spawning at month 10.5 and the age-12 plus group. The age-specific contribution to those two values is shown in <a href="#fig-h2-sbpr-at-age" class="quarto-xref">Figure 1</a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-h2-sbpr-at-age" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2789,7 +2790,7 @@ Table 4: Maturity-at-age vectors read from the h2_1.14 control file.
 </figure>
 </div>
 </div>
-<p><strong>15.</strong> The maturity-at-age schedules used in the spawning biomass calculation are listed by stock for the two-stock model in <a href="#tbl-maturity-preview" class="quarto-xref">Table 4</a>. The single-stock model uses the same maturity schedule as Stock 1 in <code>h2_1.14</code>.</p>
+<p><strong>16.</strong> The maturity-at-age schedules used in the spawning biomass calculation are listed by stock for the two-stock model in <a href="#tbl-maturity-preview" class="quarto-xref">Table 4</a>. The single-stock model uses the same maturity schedule as Stock 1 in <code>h2_1.14</code>.</p>
 <div class="cell">
 <div id="tbl-ssb-weight-at-age" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -2959,11 +2960,11 @@ Table 5: Population weight-at-age used with maturity-at-age in the h2_1.14 spaw
 </figure>
 </div>
 </div>
-<p><strong>16.</strong> The population weight-at-age vectors paired with maturity in the spawning biomass equation are shown for the two-stock model in <a href="#tbl-ssb-weight-at-age" class="quarto-xref">Table 5</a>. Again, the single-stock model uses the same vector as Stock 1 in <code>h2_1.14</code>.</p>
+<p><strong>17.</strong> The population weight-at-age vectors paired with maturity in the spawning biomass equation are shown for the two-stock model in <a href="#tbl-ssb-weight-at-age" class="quarto-xref">Table 5</a>. Again, the single-stock model uses the same vector as Stock 1 in <code>h2_1.14</code>.</p>
 </section>
 <section id="weight-at-age" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="weight-at-age"><span class="header-section-number">3.3</span> Weight-at-age</h2>
-<p><strong>17.</strong> Weight-at-age is the central biological data issue for this working paper because model <code>1.14</code> is specifically identified as updating historical weight-at-age for the Far North fleet. The model includes population weight-at-age in the control files and fishery or survey weight-at-age schedules in the data file. The fixed population weight-at-age vectors used for spawning biomass are repeated for <code>h2_1.14</code> in <a href="#tbl-pop-weight-at-age" class="quarto-xref">Table 6</a> to separate them from time-varying fishery and index weights-at-age.</p>
+<p><strong>18.</strong> Weight-at-age is the central biological data issue for this working paper because model <code>1.14</code> is specifically identified as updating historical weight-at-age for the Far North fleet. The model includes population weight-at-age in the control files and fishery or survey weight-at-age schedules in the data file. The fixed population weight-at-age vectors used for spawning biomass are repeated for <code>h2_1.14</code> in <a href="#tbl-pop-weight-at-age" class="quarto-xref">Table 6</a> to separate them from time-varying fishery and index weights-at-age.</p>
 <div class="cell">
 <div id="tbl-pop-weight-at-age" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -3133,7 +3134,7 @@ Table 6: Population weight-at-age vectors read from the h2_1.14 control file.
 </figure>
 </div>
 </div>
-<p><strong>18.</strong> For the single-stock model <code>h1_1.14</code>, correlations among fishery and acoustic-survey weight-at-age sources are generally modest across ages (<a href="#tbl-waa-correlation-summary" class="quarto-xref">Table 7</a>), with the age pattern shown in <a href="#fig-waa-correlation-by-age" class="quarto-xref">Figure 2</a>. CPUE indices and DEPM are excluded because the CPUE weights-at-age duplicate their associated fishery series and DEPM is omitted here to simplify the source comparison. The annual distributions of weight-at-age from this same reduced source set are shown for ages 1-9 in <a href="#fig-waa-violin-by-age" class="quarto-xref">Figure 3</a>; the plotted points mark the overall mean normalized weight-at-age for each source and age. For age 3, the median cross-source correlation is 0.04, with 8 negative source pairs out of 21 total pairs. The age-3 heatmap in <a href="#fig-age3-waa-correlation" class="quarto-xref">Figure 4</a> shows that several high correlations are expected because some data sources share related biological sampling and imputation histories. For age 3, <code>FarNorth</code> remains strongly correlated with <code>Peru_Acoustic</code>. The same age-3 source subset is shown as a pairs plot in <a href="#fig-age3-waa-pairs" class="quarto-xref">Figure 5</a>, with pairwise correlations in the upper triangle and smoothed scatterplots in the lower triangle. Age 8 has the highest mean pairwise correlation among the age-specific weight-at-age series in <a href="#tbl-waa-correlation-summary" class="quarto-xref">Table 7</a>; the corresponding correlation heatmap for the same reduced source set is shown in <a href="#fig-age8-waa-correlation" class="quarto-xref">Figure 6</a>. The same age-8 source subset is also shown as a pairs plot in <a href="#fig-age8-waa-pairs" class="quarto-xref">Figure 7</a>, which makes the linearity and outlying years behind the pairwise correlations easier to inspect.</p>
+<p><strong>19.</strong> For the single-stock model <code>h1_1.14</code>, correlations among fishery and acoustic-survey weight-at-age sources are generally modest across ages (<a href="#tbl-waa-correlation-summary" class="quarto-xref">Table 7</a>), with the age pattern shown in <a href="#fig-waa-correlation-by-age" class="quarto-xref">Figure 2</a>. CPUE indices and DEPM are excluded because the CPUE weights-at-age duplicate their associated fishery series and DEPM is omitted here to simplify the source comparison. The annual distributions of weight-at-age from this same reduced source set are shown for ages 1-9 in <a href="#fig-waa-violin-by-age" class="quarto-xref">Figure 3</a>; the plotted points mark the overall mean normalized weight-at-age for each source and age. For age 3, the median cross-source correlation is 0.04, with 8 negative source pairs out of 21 total pairs. The age-3 heatmap in <a href="#fig-age3-waa-correlation" class="quarto-xref">Figure 4</a> shows that several high correlations are expected because some data sources share related biological sampling and imputation histories. For age 3, <code>FarNorth</code> remains strongly correlated with <code>Peru_Acoustic</code>. The same age-3 source subset is shown as a pairs plot in <a href="#fig-age3-waa-pairs" class="quarto-xref">Figure 5</a>, with pairwise correlations in the upper triangle and smoothed scatterplots in the lower triangle. Age 8 has the highest mean pairwise correlation among the age-specific weight-at-age series in <a href="#tbl-waa-correlation-summary" class="quarto-xref">Table 7</a>; the corresponding correlation heatmap for the same reduced source set is shown in <a href="#fig-age8-waa-correlation" class="quarto-xref">Figure 6</a>. The same age-8 source subset is also shown as a pairs plot in <a href="#fig-age8-waa-pairs" class="quarto-xref">Figure 7</a>, which makes the linearity and outlying years behind the pairwise correlations easier to inspect.</p>
 <div class="cell">
 <div id="tbl-waa-correlation-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -3142,20 +3143,20 @@ Table 7: Pairwise correlations among h1_1.14 fishery and acoustic-survey weight
 </figcaption>
 <div aria-describedby="tbl-waa-correlation-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="gjquhuqbyo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gjquhuqbyo table {
+<div id="abikspueeq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#abikspueeq table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#gjquhuqbyo thead, #gjquhuqbyo tbody, #gjquhuqbyo tfoot, #gjquhuqbyo tr, #gjquhuqbyo td, #gjquhuqbyo th {
+#abikspueeq thead, #abikspueeq tbody, #abikspueeq tfoot, #abikspueeq tr, #abikspueeq td, #abikspueeq th {
 border-style: none;
 }
-#gjquhuqbyo p {
+#abikspueeq p {
 margin: 0;
 padding: 0;
 }
-#gjquhuqbyo .gt_table {
+#abikspueeq .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -3180,11 +3181,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#gjquhuqbyo .gt_caption {
+#abikspueeq .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#gjquhuqbyo .gt_title {
+#abikspueeq .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -3195,7 +3196,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#gjquhuqbyo .gt_subtitle {
+#abikspueeq .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -3206,7 +3207,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#gjquhuqbyo .gt_heading {
+#abikspueeq .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -3217,12 +3218,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#gjquhuqbyo .gt_bottom_border {
+#abikspueeq .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#gjquhuqbyo .gt_col_headings {
+#abikspueeq .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3236,7 +3237,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#gjquhuqbyo .gt_col_heading {
+#abikspueeq .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3255,7 +3256,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#gjquhuqbyo .gt_column_spanner_outer {
+#abikspueeq .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3266,13 +3267,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#gjquhuqbyo .gt_column_spanner_outer:first-child {
+#abikspueeq .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#gjquhuqbyo .gt_column_spanner_outer:last-child {
+#abikspueeq .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#gjquhuqbyo .gt_column_spanner {
+#abikspueeq .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -3283,10 +3284,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#gjquhuqbyo .gt_spanner_row {
+#abikspueeq .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#gjquhuqbyo .gt_group_heading {
+#abikspueeq .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3311,7 +3312,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#gjquhuqbyo .gt_empty_group_heading {
+#abikspueeq .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -3325,13 +3326,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#gjquhuqbyo .gt_from_md > :first-child {
+#abikspueeq .gt_from_md > :first-child {
 margin-top: 0;
 }
-#gjquhuqbyo .gt_from_md > :last-child {
+#abikspueeq .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#gjquhuqbyo .gt_row {
+#abikspueeq .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3349,7 +3350,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#gjquhuqbyo .gt_stub {
+#abikspueeq .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3361,7 +3362,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#gjquhuqbyo .gt_stub_row_group {
+#abikspueeq .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3374,13 +3375,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#gjquhuqbyo .gt_row_group_first td {
+#abikspueeq .gt_row_group_first td {
 border-top-width: 2px;
 }
-#gjquhuqbyo .gt_row_group_first th {
+#abikspueeq .gt_row_group_first th {
 border-top-width: 2px;
 }
-#gjquhuqbyo .gt_summary_row {
+#abikspueeq .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3389,14 +3390,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#gjquhuqbyo .gt_first_summary_row {
+#abikspueeq .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#gjquhuqbyo .gt_first_summary_row.thick {
+#abikspueeq .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#gjquhuqbyo .gt_last_summary_row {
+#abikspueeq .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3405,7 +3406,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#gjquhuqbyo .gt_grand_summary_row {
+#abikspueeq .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3414,7 +3415,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#gjquhuqbyo .gt_first_grand_summary_row {
+#abikspueeq .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3423,7 +3424,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#gjquhuqbyo .gt_last_grand_summary_row_top {
+#abikspueeq .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3432,10 +3433,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#gjquhuqbyo .gt_striped {
+#abikspueeq .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#gjquhuqbyo .gt_table_body {
+#abikspueeq .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3443,7 +3444,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#gjquhuqbyo .gt_footnotes {
+#abikspueeq .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -3456,7 +3457,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#gjquhuqbyo .gt_footnote {
+#abikspueeq .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -3464,7 +3465,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#gjquhuqbyo .gt_sourcenotes {
+#abikspueeq .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -3477,64 +3478,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#gjquhuqbyo .gt_sourcenote {
+#abikspueeq .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#gjquhuqbyo .gt_left {
+#abikspueeq .gt_left {
 text-align: left;
 }
-#gjquhuqbyo .gt_center {
+#abikspueeq .gt_center {
 text-align: center;
 }
-#gjquhuqbyo .gt_right {
+#abikspueeq .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#gjquhuqbyo .gt_font_normal {
+#abikspueeq .gt_font_normal {
 font-weight: normal;
 }
-#gjquhuqbyo .gt_font_bold {
+#abikspueeq .gt_font_bold {
 font-weight: bold;
 }
-#gjquhuqbyo .gt_font_italic {
+#abikspueeq .gt_font_italic {
 font-style: italic;
 }
-#gjquhuqbyo .gt_super {
+#abikspueeq .gt_super {
 font-size: 65%;
 }
-#gjquhuqbyo .gt_footnote_marks {
+#abikspueeq .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#gjquhuqbyo .gt_asterisk {
+#abikspueeq .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#gjquhuqbyo .gt_indent_1 {
+#abikspueeq .gt_indent_1 {
 text-indent: 5px;
 }
-#gjquhuqbyo .gt_indent_2 {
+#abikspueeq .gt_indent_2 {
 text-indent: 10px;
 }
-#gjquhuqbyo .gt_indent_3 {
+#abikspueeq .gt_indent_3 {
 text-indent: 15px;
 }
-#gjquhuqbyo .gt_indent_4 {
+#abikspueeq .gt_indent_4 {
 text-indent: 20px;
 }
-#gjquhuqbyo .gt_indent_5 {
+#abikspueeq .gt_indent_5 {
 text-indent: 25px;
 }
-#gjquhuqbyo .katex-display {
+#abikspueeq .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#gjquhuqbyo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#abikspueeq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
@@ -3766,7 +3767,7 @@ Figure 7: Pairs plot for h1_1.14 age-8 weight-at-age time series from the reduc
 </div>
 </div>
 </div>
-<p><strong>19.</strong> Items to evaluate:</p>
+<p><strong>20.</strong> Items to evaluate:</p>
 <ol type="1">
 <li>Which <code>1.14.dat</code> sections contain Far North fishery and associated index weight-at-age schedules.</li>
 <li>How the historical Far North updates differ from model <code>1.13</code>.</li>
@@ -3777,9 +3778,9 @@ Figure 7: Pairs plot for h1_1.14 age-8 weight-at-age time series from the reduc
 </section>
 <section id="results-and-discussion" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Results and discussion</h1>
-<p><strong>20.</strong> This section should synthesize the biological checks rather than repeat the full assessment model description. The expected output is a concise judgement on whether the biological inputs in model <code>1.14</code> are internally consistent, adequately documented, and suitable as the basis for the <code>JM_SCW_prep</code> working paper package.</p>
-<p><strong>21.</strong> The age-structured contribution to estimated spawning biomass from the fitted <code>h2_1.14</code> model is shown in <a href="#fig-h2-ssb-age-timeseries" class="quarto-xref">Figure 8</a>. Age groups 7 and older are pooled to keep the time series interpretable while retaining the dominant older-age contribution. Stock 1 has a broader distribution across ages, with substantial contributions from ages 2-5 and a smaller relative contribution from the pooled older ages in recent years. Stock 2 is shifted older because age-1 fish are immature and age-2 maturity is partial; its spawning biomass is therefore concentrated more strongly in ages 3-6 and the 7+ group, with the 7+ group contributing a larger share than in Stock 1.</p>
-<p><strong>22.</strong> The same fitted spawning biomass time series is shown by stock in <a href="#fig-h2-ssb-stock-scale" class="quarto-xref">Figure 9</a>. The purpose of this second figure is to show the relative scale of spawning biomass between the two stocks.</p>
+<p><strong>21.</strong> This section should synthesize the biological checks rather than repeat the full assessment model description. The expected output is a concise judgement on whether the biological inputs in model <code>1.14</code> are internally consistent, adequately documented, and suitable as the basis for the <code>JM_SCW_prep</code> working paper package.</p>
+<p><strong>22.</strong> The age-structured contribution to estimated spawning biomass from the fitted <code>h2_1.14</code> model is shown in <a href="#fig-h2-ssb-age-timeseries" class="quarto-xref">Figure 8</a>. Age groups 7 and older are pooled to keep the time series interpretable while retaining the dominant older-age contribution. Stock 1 has a broader distribution across ages, with substantial contributions from ages 2-5 and a smaller relative contribution from the pooled older ages in recent years. Stock 2 is shifted older because age-1 fish are immature and age-2 maturity is partial; its spawning biomass is therefore concentrated more strongly in ages 3-6 and the 7+ group, with the 7+ group contributing a larger share than in Stock 1.</p>
+<p><strong>23.</strong> The same fitted spawning biomass time series is shown by stock in <a href="#fig-h2-ssb-stock-scale" class="quarto-xref">Figure 9</a>. The purpose of this second figure is to show the relative scale of spawning biomass between the two stocks.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-h2-ssb-age-timeseries" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -3808,7 +3809,7 @@ Figure 9: Stacked spawning biomass by stock from the fitted h2_1.14 model. This
 </div>
 </div>
 </div>
-<p><strong>23.</strong> Initial points to carry forward:</p>
+<p><strong>24.</strong> Initial points to carry forward:</p>
 <ol type="1">
 <li>The authoritative files remain in <code>jjm/assessment</code>; this repository reads them directly for reproducibility.</li>
 <li>The single-stock and two-stock hypotheses share the same common data file but differ in biological and stock-structure assumptions through their control files.</li>
@@ -3818,6 +3819,12 @@ Figure 9: Stacked spawning biomass by stock from the fitted h2_1.14 model. This
 <section id="references" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-sprfmo2022scw14" class="csl-entry" role="listitem">
+SPRFMO Scientific Committee. (2022a). <em>Jack mackerel benchmark workshop (SCW14)</em>. South Pacific Regional Fisheries Management Organisation (SPRFMO). <a href="https://www.sprfmo.int/meetings/scientific-committee/sc-workshops/scw14-jack-mackerel">https://www.sprfmo.int/meetings/scientific-committee/sc-workshops/scw14-jack-mackerel</a>
+</div>
+<div id="ref-sprfmo2022scw14report" class="csl-entry" role="listitem">
+SPRFMO Scientific Committee. (2022b). <em>SPRFMO scientific committee jack mackerel benchmark workshop (2022) report</em>. South Pacific Regional Fisheries Management Organisation (SPRFMO). <a href="https://www.sprfmo.int/assets/Meetings/SC_WS/SCW14-Jack-Mackerel-2022/SPRFMO-SC-JM-Benchmark-Workshop-2022-Report-SCW14.pdf">https://www.sprfmo.int/assets/Meetings/SC_WS/SCW14-Jack-Mackerel-2022/SPRFMO-SC-JM-Benchmark-Workshop-2022-Report-SCW14.pdf</a>
+</div>
 <div id="ref-sprfmo2025sc13report" class="csl-entry" role="listitem">
 SPRFMO Scientific Committee. (2025a). <em>13th scientific committee meeting report</em> (p. 180). South Pacific Regional Fisheries Management Organisation (SPRFMO). <a href="https://sprfmo.int/assets/Meetings/02-SC/13th-SC-2025/SC13-REPORT-ADOPTED-13SEPT2025c.pdf">https://sprfmo.int/assets/Meetings/02-SC/13th-SC-2025/SC13-REPORT-ADOPTED-13SEPT2025c.pdf</a>
 </div>

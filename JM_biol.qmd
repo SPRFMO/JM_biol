@@ -122,6 +122,10 @@ purpose is to provide a focused biological-data review for `JM_SCW_prep`, while
 keeping the assessment inputs and configuration files traceable to the
 neighboring `jjm` repository.
 
+This contribution extends from the 2022 Jack Mackerel Benchmark Workshop
+(SCW14) and its final report, which provide the previous benchmark basis for
+the joint jack mackerel assessment [@sprfmo2022scw14; @sprfmo2022scw14report].
+
 Model `1.14` is the SC13 model update described in `jjm/assessment/README.md`
 as model `1.13` with updates to historical weight-at-age for the Far North
 fleet. The SC13 final report and Jack Mackerel Technical Annex provide the
