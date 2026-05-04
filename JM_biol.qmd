@@ -1,21 +1,56 @@
 ---
-title: "Biological data used in the joint jack mackerel assessment"
-subtitle: "Working paper for JM_SCW_prep"
+title: "JM Biology"
+subtitle: "Biological data used in the joint jack mackerel assessment"
 author: "Jack Mackerel Working Group"
 date: today
 bibliography: references.bib
+csl: annex/apa.csl
+filters:
+  - narrative_paragraph_numbers.lua
 format:
   html:
-    output-file: "JM_biol.html"
+    output-file: "SCW16-Paper-05-JM_Biology.html"
+    self-contained: true
     lightbox: true
+    html-math-method: katex
+    toc: true
+    toc-title: "Contents"
+    toc-depth: 2
+    toc-location: left
+    number-sections: true
+    number-depth: 2
   pdf:
-    output-file: "JM_biol.pdf"
+    output-file: "SCW16-Paper-05-JM_Biology.pdf"
+    number-sections: true
+    number-depth: 2
+    title-block: false
+    include-in-header:
+      text: |
+        \usepackage{fancyhdr}
+        \fancyhf{}
+        \fancyhead[R]{\textit{SCW16/Paper-05}}
+        \fancyhead[L]{\textit{JM Biology}}
+        \fancyfoot[C]{\thepage}
+        \fancypagestyle{plain}{
+          \fancyhf{}
+          \fancyhead[R]{\textit{SCW16/Paper-05}}
+          \fancyhead[L]{\textit{JM Biology}}
+          \fancyfoot[C]{\thepage}
+        }
+        \pagestyle{fancy}
+  docx:
+    output-file: "SCW16-Paper-05-JM_Biology.docx"
+    toc: true
+    number-sections: true
+    number-depth: 2
+    title-block: false
 ---
 
 ```{r}
 source("R/read_jjm_text.R")
 source("../jjm/rtmb_jjm/read_jjm.R")
 
+date_stamp <- format(Sys.Date(), "%d %B %Y")
 paths <- model_paths(root = "..", model = "1.14")
 h2_rep_path <- file.path("..", "jjm", "assessment", "results", "h2_1.14.rep")
 dat <- read_jjm_sections(paths$input)
@@ -26,6 +61,58 @@ h1_bio <- summarise_biology(h1_ctl)
 h2_bio <- summarise_biology(h2_ctl)
 model_years <- seq(as.numeric(dat$years[[1]]), as.numeric(dat$years[[2]]))
 ```
+
+{{< include _includes/sprfmo-banner.html >}}
+
+::: {.content-visible when-format="pdf"}
+```{=latex}
+\begin{center}
+\begin{minipage}[c]{0.18\textwidth}
+\centering
+\includegraphics[width=\linewidth]{annex/logo.png}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.76\textwidth}
+{\Huge \textbf{SPRFMO}}\par
+{\large South Pacific Regional Fisheries Management Organisation}\par
+\vspace{0.4em}
+{\Large \textbf{Jack Mackerel Working Group}}
+\end{minipage}
+\end{center}
+\noindent\rule{\linewidth}{1pt}
+\begin{center}\Large\bfseries JM Biology\end{center}
+```
+:::
+
+::: {.content-visible when-format="docx"}
+| ![](annex/logo.png){width=1.35in} | **SPRFMO**<br>South Pacific Regional Fisheries Management Organisation<br><br>**Jack Mackerel Working Group** |
+|:---:|:---|
+
+*SCW16/Paper-05*
+
+:::
+
+```{=html}
+<div style="font-style: italic; margin-top: 0.5rem;">SCW16/Paper-05</div>
+<div style="margin-top: 0.35rem; margin-bottom: 0.35rem;"><a href="SCW16-Paper-05-JM_Biology.pdf">PDF-rendered version</a> | <a href="SCW16-Paper-05-JM_Biology.docx">MS Word version</a></div>
+```
+
+```{=html}
+<div class="paper-title">JM Biology</div>
+```
+
+::: {.content-visible when-format="pdf"}
+```{=latex}
+\begin{center}
+\today
+\end{center}
+```
+:::
+
+::: {.content-visible .no-para-number unless-format="pdf"}
+::: {.no-para-number style="text-align: center; margin-top: 0.75rem; margin-bottom: 1rem;"}
+`r date_stamp`
+:::
+:::
 
 # Intro
 
