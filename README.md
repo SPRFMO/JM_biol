@@ -3,7 +3,7 @@
 Technical working paper scaffold for evaluating biological data used in the
 SPRFMO joint jack mackerel model assessment.
 
-The report is in `JM_biol.qmd`. It is designed to read model `1.14` inputs from
+The report is in `SCW16-Doc05_JM_Biology.qmd`. It is designed to read model `1.14` inputs from
 the neighboring `jjm` repository:
 
 - `../jjm/assessment/input/1.14.dat`
@@ -16,6 +16,5 @@ Keep authoritative assessment inputs in `../jjm/assessment`.
 Render with:
 
 ```sh
-quarto render JM_biol.qmd
+quarto render SCW16-Doc05_JM_Biology.qmd
 ```
-

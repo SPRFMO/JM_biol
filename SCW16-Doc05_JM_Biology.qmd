@@ -9,7 +9,7 @@ filters:
   - narrative_paragraph_numbers.lua
 format:
   html:
-    output-file: "SCW16-Paper-05-JM_Biology.html"
+    output-file: "SCW16-Doc05_JM_Biology.html"
     self-contained: true
     lightbox: true
     html-math-method: katex
@@ -20,7 +20,7 @@ format:
     number-sections: true
     number-depth: 2
   pdf:
-    output-file: "SCW16-Paper-05-JM_Biology.pdf"
+    output-file: "SCW16-Doc05_JM_Biology.pdf"
     number-sections: true
     number-depth: 2
     title-block: false
@@ -39,7 +39,7 @@ format:
         }
         \pagestyle{fancy}
   docx:
-    output-file: "SCW16-Paper-05-JM_Biology.docx"
+    output-file: "SCW16-Doc05_JM_Biology.docx"
     toc: true
     number-sections: true
     number-depth: 2
@@ -93,7 +93,7 @@ model_years <- seq(as.numeric(dat$years[[1]]), as.numeric(dat$years[[2]]))
 
 ```{=html}
 <div style="font-style: italic; margin-top: 0.5rem;">SCW16/Paper-05</div>
-<div style="margin-top: 0.35rem; margin-bottom: 0.35rem;"><a href="SCW16-Paper-05-JM_Biology.pdf">PDF-rendered version</a> | <a href="SCW16-Paper-05-JM_Biology.docx">MS Word version</a></div>
+<div style="margin-top: 0.35rem; margin-bottom: 0.35rem;"><a href="SCW16-Doc05_JM_Biology.pdf">PDF-rendered version</a> | <a href="SCW16-Doc05_JM_Biology.docx">MS Word version</a></div>
 ```
 
 ```{=html}

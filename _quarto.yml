@@ -2,7 +2,7 @@ project:
   type: default
   output-dir: docs
   render:
-    - JM_biol.qmd
+    - SCW16-Doc05_JM_Biology.qmd
 
 format:
   html:
